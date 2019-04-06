@@ -23,29 +23,29 @@ const App = props => {
     setDestroyed(true);
   };
 
-    let content = (
-      <React.Fragment>
-        <CharPicker
-          side={chosenSide}
-          selectedChar={selectedCharacter}
-          onCharSelect={charSelectHandler}
-        />
-        <Character selectedChar={selectedCharacter} />
-        <button onClick={sideHandler.bind(this, 'light')}>
-          Light Side
+  let content = (
+    <React.Fragment>
+      <CharPicker
+        side={chosenSide}
+        selectedChar={selectedCharacter}
+        onCharSelect={charSelectHandler}
+      />
+      <Character selectedChar={selectedCharacter} />
+      <button onClick={sideHandler.bind(this, 'light')}>
+        Light Side
         </button>
-        <button onClick={sideHandler.bind(this, 'dark')}>Dark Side</button>
-        {chosenSide === 'dark' && (
-          <button onClick={destructionHandler}>DESTROY!</button>
-        )}
-      </React.Fragment>
-    );
+      <button onClick={sideHandler.bind(this, 'dark')}>Dark Side</button>
+      {chosenSide === 'dark' && (
+        <button onClick={destructionHandler}>DESTROY!</button>
+      )}
+    </React.Fragment>
+  );
 
-    if (destroyed) {
-      content = <h1>Total destruction!</h1>;
-    }
-    return content;
-  
+  if (destroyed) {
+    content = <h1>Total destruction!</h1>;
+  }
+  return content;
+
 }
 
 export default App;
